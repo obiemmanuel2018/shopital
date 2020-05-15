@@ -1,0 +1,37 @@
+ion-card{
+    height:auto;
+    width:98%;
+    position: absolute;
+    margin-top:15%;
+    margin-left: 1%;
+    margin-right: 1%!important;
+    --background:none;
+  
+  
+  }
+  ion-item{
+    --background:none;
+  }
+  .facebook{
+    --background: #3b5998;
+    margin-top: 5%;
+  }
+
+  ion-col{
+    text-align: center;
+  }
+  h1{
+      font-style: oblique;
+      font-weight: bolder;
+      color: white;
+  }
+  .google {
+    --background: white;
+    color:black
+  }
+  .logo-google {
+    color:rgba(255, 61, 13, 0.795);
+  }
+  .invalid-message {
+    color: red !important;
+  }

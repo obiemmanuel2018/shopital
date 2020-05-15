@@ -1,0 +1,47 @@
+ion-grid,ion-col{
+  padding: 0px;
+}
+ion-col{
+  text-align: center;
+ 
+}
+ion-row{
+  margin-top: 3%;
+}
+
+.button-more{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color:whitesmoke;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ion-item{
+  text-align: center;
+  margin-bottom: 3%;
+  --background:none;
+}
+h1{
+  color:black !important;
+}
+.details {
+  background:linear-gradient(to bottom right,white 60%, #f10404);
+}
+.down-arrow {
+  width: 60px;
+  height: 90px;
+  color:rgb(56, 56, 255);
+  animation-name: height;
+  animation-timing-function: linear;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+}
+ion-fab{
+  text-align: center;
+}
+@keyframes height {
+  from {height:90px}
+  to{height: 110px;}
+}

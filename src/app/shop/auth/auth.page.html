@@ -1,0 +1,43 @@
+
+
+<ion-content fullscreen=true>
+  
+  <ion-grid>
+
+    <ion-row *ngIf="!isLoading" class="imageLogo">
+      <ion-col>
+        <ion-avatar >
+          <ion-img src='../../assets/img/Shopitall-logos.jpeg'></ion-img>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!isLoading" >
+      <ion-col size-sm=12 size-md=8 offset-md=2 >
+        <ion-segment [(ngModel)]="segmentInitialised"  (ionChange)="segmentChange($event)">
+          <ion-segment-button value="MyShop">My Shop</ion-segment-button>
+          <ion-segment-button value="GoShopping">Go Shopping</ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isLoading" class="logo-grid">
+      <ion-col size=12>
+        <ion-avatar>
+          <ion-img src='../../assets/img/Shopitall-logos.jpeg'></ion-img>
+          
+        </ion-avatar>
+        
+      </ion-col>
+    
+    </ion-row>
+    <ion-row *ngIf="isLoading" class="spinner">
+      <ion-col >
+        <ion-spinner name="dots"></ion-spinner>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <app-login *ngIf="!isLoading && currentSegment==='MyShop' || !isLoading"  [shops]="shops" [errorMessage]="errorMessage" ></app-login>
+  <app-customerlogin *ngIf="currentSegment==='GoShopping'"></app-customerlogin>
+</ion-content>
+    

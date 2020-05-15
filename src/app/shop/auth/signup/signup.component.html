@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="onClose()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <form #f="ngForm" (ngSubmit)="onSignup(f)">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title color="primary">Signup:</ion-card-title>
+        <ion-card-subtitle>Create Shop account:</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        
+        <ion-item>
+          <ion-label position="floating">Full Name</ion-label>
+          <ion-input 
+          type="text"
+          name="fullName"
+          ngModel
+          required
+          #fullName="ngModel"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input 
+          type="email"
+          name="email"
+          ngModel
+          required
+          #email="ngModel"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input 
+          type="number"
+          name="phoneNumber"
+          ngModel
+          required
+          #phoneNumber="ngModel"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Shop Name</ion-label>
+          <ion-input 
+          type="text"
+          name="shopName"
+          ngModel
+          required
+          #shopName="ngModel"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Shop Address</ion-label>
+          <ion-input
+           type="text"
+           name="shopAddress"
+           ngModel
+           required
+           #shopAddress="ngModel"
+           ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">UserName</ion-label>
+          <ion-input 
+          type="text"
+          name="username"
+          ngModel
+          required
+          #username="ngModel"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input 
+          type="password"
+          name="password"
+          ngModel
+          required
+          #password="ngModel"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input
+           type="password"
+           name="confirmPassword"
+           ngModel
+           required
+           #confirmPassword="ngModel"
+           ></ion-input>
+        </ion-item>
+        <ion-button color="primary" type="submit" expand="block">Signup</ion-button><br>
+       
+        </ion-card-content>
+    </ion-card>
+  </form>
+  
+  
+</ion-content>

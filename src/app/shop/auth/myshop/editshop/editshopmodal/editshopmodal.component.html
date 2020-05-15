@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="end">
+      <ion-button (click)="onClose()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f ="ngForm" (ngSubmit)="onSubmit(f)" >
+  <ion-item>
+    <ion-label position="floating">Name:</ion-label>
+    <ion-input  
+    autofocus="true"
+    type="text"
+    name="name"
+    ngModel
+    required
+    #name ="ngModel"
+     ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Address:</ion-label>
+    <ion-input
+     autocapitalize="on" 
+     autofocus="true"
+     type="text"
+     name="address"
+     ngModel
+     #address="ngModel"
+     required
+      ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email:</ion-label>
+    <ion-input
+     type="email" 
+     autofocus="true"
+     required
+     name="email"
+     ngModel
+     #email="ngModel"
+     ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contact:</ion-label>
+    
+    <ion-input 
+      inputmode="tel"
+      name="contact"
+      required
+      ngModel
+      #contact="ngModel"
+       >
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password:</ion-label>
+    <ion-input 
+    type="password"
+    required
+    name="password"
+    ngModel
+    #password="ngModel"
+    ></ion-input>
+  
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Shop-Owner:</ion-label>
+    <ion-input
+     autofocus="true"
+     type="text"
+     required
+     name="owner"
+     ngModel
+     #owner="ngModel"
+     ></ion-input>
+  </ion-item>
+  <ion-button type="submit">
+    <ion-icon name="checkmark" type></ion-icon>
+  </ion-button>
+  </form>
+</ion-content>

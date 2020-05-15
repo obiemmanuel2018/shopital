@@ -1,0 +1,43 @@
+ion-grid,ion-col{
+    padding:0px;
+}
+
+ion-content{
+    overflow: hidden;
+}
+.col-image{
+    overflow-y: hidden;
+    filter: blur(1px);
+    height: 300px;
+    
+}
+i
+
+ion-row{
+    border-bottom: 5px solid whitesmoke;
+}
+.row-item{
+     
+     border-top: 4px solid whitesmoke;
+}
+.whatsap-logo{
+    color: lightgreen;
+}
+ion-icon{
+    color: black;
+}
+.spinner{
+    text-align: center;
+  }
+  ion-card-content {
+    background:linear-gradient(to bottom right,white 60%, #f10404);
+  
+  }
+  ion-card-title {
+    color:#f10404;
+  }
+  ion-thumbnail{
+      width: 100%;
+      height: auto;
+      
+  }

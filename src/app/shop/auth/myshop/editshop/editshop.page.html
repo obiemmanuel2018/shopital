@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+    <ion-buttons slot="end" >
+      <!--Omiting input 8 cus it's for whatsap number....but it's corrently not available-->
+      <ion-button (click)="openModal()">
+        <ion-icon name="settings" slot="icon-only"> 
+
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons>
+      <ion-back-button [defaultHref]="['shop','myshop']"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+<ion-grid>
+  <ion-row>
+    <ion-col class="col-image">
+      <ion-thumbnail>
+        <ion-img 
+        [src]= imageSrc
+        (click) = "openImageModal()"
+        ></ion-img>
+      </ion-thumbnail>
+
+    </ion-col>
+  </ion-row>
+     
+       
+    
+  
+  <ion-row class="row-item">
+    <ion-col>
+     
+        <input 
+        type=file
+        (change) = "selectPreview($event)"
+        #SelectedImage
+        style="display: none;"
+        >
+        <ion-button  (click) = "SelectedImage.click()">Pick Image</ion-button>
+        <ion-button  (click) = "onUpload()">Upload</ion-button>
+      
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Name:
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <h2>{{shop[0].name}}</h2>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Address:
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      
+          <h2>{{shop[0].address}}</h2>
+      
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Email:
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      
+          <h2>{{shop[0].email}}</h2>
+      
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Contact:
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          
+          <h2><ion-icon name="call"></ion-icon> {{shop[0].contact}}</h2>
+      
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Password:
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      
+          <h3>{{shop[0].password}}</h3>
+      
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+         OwnBy:
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      
+          <h3>{{shop[0].owner}}</h3>
+      
+      </ion-card-content>
+    </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

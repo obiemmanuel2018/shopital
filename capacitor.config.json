@@ -1,0 +1,8 @@
+{
+  "appId": "com.shopitall.app",
+  "appName": "shopitall",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

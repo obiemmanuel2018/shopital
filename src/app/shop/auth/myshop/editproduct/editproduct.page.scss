@@ -1,0 +1,41 @@
+ion-col,ion-grid{
+  padding: 0px;
+}
+
+h3{
+  margin-bottom: 2%;
+}
+div{
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 5%;
+  flex-wrap: wrap;
+}
+del {
+  color:red;
+}
+.spinner{
+  text-align: center;
+}
+.row-image{
+  height: 300px !important;
+}
+h3,p{
+  color:black !important;
+  font-weight: bold;
+  font-family: arial;
+}
+ion-card {
+   margin-left:-5%;
+   
+}
+ion-card-content {
+  background:linear-gradient(to bottom right,white 60%, #f10404);
+
+}
+ion-card-title {
+  color:#f10404;
+}
+ion-button{
+  color: whitesmoke;
+}

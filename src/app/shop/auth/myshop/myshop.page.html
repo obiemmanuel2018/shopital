@@ -1,0 +1,83 @@
+
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+    <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isLoading" >{{ shop[0].name }}</ion-title>
+    <ion-buttons slot="end">
+        <ion-button routerLink="orders">
+          <ion-icon name="notifications"></ion-icon>
+          
+        </ion-button>
+    </ion-buttons>
+  
+    </ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+
+</ion-header>
+
+<ion-content  >
+
+
+ 
+      <ion-fab *ngIf="!isLoading" vertical="bottom" horizontal="end" slot="fixed" translucent="true" [routerLink]="['newproduct']">
+        <ion-icon *ngIf="!products"  class="down-arrow" name="arrow-down"></ion-icon>
+        <ion-fab-button color="danger">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  
+  
+  <ion-grid *ngIf="isLoading" >
+    <ion-row>
+      <ion-col size=12 size-sm=8 offset-sm=2 >
+        <ion-spinner color="primary"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!isLoading && !products" >
+    <ion-row>
+      <ion-col size=12 size-sm=8 offset-sm=2 >
+        <ion-item lines="none">
+          <ion-label>
+            <h1>No product found</h1>
+            <p>tab on icon to add product</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-virtual-scroll [items]="products">
+  <ion-item
+  *virtualItem="let product"
+  >
+  <ion-grid *ngIf="!isLoading && products.length > 0" >
+    <ion-row >
+      <ion-col size="6">
+        <ion-spinner *ngIf="!product.imageUrl" ></ion-spinner>
+        <ion-img [src]="product.imageUrl" [alt]="product.title" [routerLink]="['editproduct',product.id]"></ion-img>
+      </ion-col>
+      <ion-col size="6" class="details">
+        <ion-item lines="none">
+       <ion-label>
+          <h1>{{product.title}}</h1>
+          <p>{{product.price|currency}}</p>
+          <p>{{product.description}}</p>
+
+       </ion-label>
+       </ion-item><br>
+       <ion-button class="button-more" fill="clear" [routerLink]="['editproduct',product.id]">
+        more
+      </ion-button>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  </ion-item>
+</ion-virtual-scroll>
+
+</ion-content>

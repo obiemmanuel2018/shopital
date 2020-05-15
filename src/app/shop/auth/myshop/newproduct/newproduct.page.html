@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Product</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="shop/myshop"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+ <ion-grid>
+   <ion-row>
+     <ion-col class="uploadedImage" size-md=4 offset-md=4>
+      <ion-img [src]=imageSrc ></ion-img>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col size-sd="12">
+      <ion-item lines="none">
+        <input 
+        type=file
+        (change) = "selectPreview($event)"
+        #SelectedImage
+        required
+        style="display: none;"
+        >
+      </ion-item>
+      <ion-button  (click) = "SelectedImage.click()">Pick Image</ion-button>
+      
+
+       <ion-item>
+         <ion-label position="floating">Title</ion-label>
+         <ion-input 
+         type="text"
+         name="title"
+         ngModel
+         #Title="ngModel"
+         required
+         ></ion-input>
+       </ion-item>
+       <ion-item *ngIf="!Title.valid && Title.touched" >
+         <ion-label>
+           <p>This filed is required</p>
+         </ion-label>
+       </ion-item>
+       <ion-item>
+        <ion-label position="floating">Price</ion-label>
+        <ion-input
+        type="number"
+        required
+        name="price"
+        ngModel
+        #price="ngModel"
+        ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!price.valid && price.touched" >
+        <ion-label>
+          <p>This filed is required</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea
+        name="description"
+        required
+        maxLength="180"
+        minlength="1"
+        ngModel
+        #description="ngModel"
+        ></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!description.valid && description.touched" >
+        <ion-label>
+          <p>This field should be 1-50 characters long</p>
+        </ion-label>
+      </ion-item>
+      <ion-button expand="block" [disabled]="!f.valid" type="submit">Upload</ion-button>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+ </form>
+ 
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="end">
+      <ion-button (click)="onClose()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-item >
+        <ion-label position="floating">Title</ion-label>
+        <ion-input
+         type="text"
+         ngModel
+         name="title"
+
+         ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Price</ion-label>
+          <ion-input
+          type="number"
+          ngModel
+          name="price"
+          #price="ngModel"
+
+          ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Description  </ion-label>
+        <ion-textarea
+        ngModel
+        name="description"
+        minLength="1"
+        maxLength="50"
+        #description="ngModel"
+        name="description"
+        ></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!description.valid && description.touched ">
+        <ion-label>
+            <p>description should be 1-50 characters long</p>
+        </ion-label>
+
+      </ion-item>
+        <ion-button [disabled]="!f.valid" expand="block" type="submit">Save</ion-button>
+      </form>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

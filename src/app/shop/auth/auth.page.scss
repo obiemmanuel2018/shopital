@@ -1,0 +1,19 @@
+ion-content{
+    
+    --ion-background-color:linear-gradient(to bottom right,whitesmoke 45%, #f10404);
+}
+.imageLogo{
+         margin-bottom: 10%;
+         ion-avatar{
+        margin: auto;
+        margin-top: 5%;
+        width: 100px;
+        height: auto;
+    }
+}
+.spinner{
+    position: fixed;
+    top: calc(52%);
+    left: calc(50% - 34px);
+}
+
